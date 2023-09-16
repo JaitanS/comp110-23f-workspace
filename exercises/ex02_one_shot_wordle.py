@@ -1,22 +1,22 @@
-"""Step 2 to Wordle"""
-__author__ = 730675117
+"""Step 2 to Wordle!"""
+__author__ = "730675117"
 
-#Variables
+# Variables
 secret_word: str = ("python")
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
 
 
-#Collecting user word
+# Collecting user word
 guess = input(f"What is your {len(secret_word)}-letter guess? ")
 
 
-#Check length
-while len(guess)!=len(secret_word):
-    guess: str = input(f"Thats was not {len(secret_word)} letters! Try again: ")
+# Check length
+while len(guess) != len(secret_word):
+    guess = input(f"Thats was not {len(secret_word)} letters! Try again: ")
 
-#Give feedback on guess
+# Give feedback on guess
 current_index: int = 0
 results: str = ""
 while current_index < len(secret_word):
@@ -37,7 +37,7 @@ while current_index < len(secret_word):
 
 print(results)
 
-#Final verdict on guess
+# Final verdict on guess
 if guess == secret_word:
     print("Woo! You got it!")
 else: 
