@@ -11,12 +11,11 @@ length_secret_word: int = len(secret_word)
 def contains_char(secret_word, guess)-> bool: 
     """searches for same characters in guess and secret word"""
     assert len(guess) == 1
-    yellow_guess: int = 0
-    yellow: int = 0
-    while yellow_guess < len(secret_word) and yellow < 1: 
-           if guess[yellow_guess] == secret_word[yellow_guess]:
-                yellow += 1
-                return True
+    index: int = 0
+    while index < len(secret_word): 
+          if guess == secret_word[index]:
+               return True
+          index += 1
     return False
 
 def emojified(secret_word, guess)-> str: 
@@ -25,15 +24,13 @@ def emojified(secret_word, guess)-> str:
     current_index: int = 0
     results: str = ""
     while current_index < len(secret_word): 
-       if guess[current_index] == secret_word[current_index]: 
-            current_index += 1
-            results += green_box
-       elif contains_char is True: 
-            current_index += 1
-            results += yellow_box
-       else:
-            current_index += 1
-            results += white_box
+          if guess[current_index] == secret_word[current_index]: 
+               results += green_box
+          elif contains_char(secret_word, guess[current_index]): 
+               results += yellow_box
+          else:
+               results += white_box
+          current_index += 1
     return results
 
 def input_guess(length_secret_word)-> str: 
