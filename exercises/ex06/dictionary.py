@@ -45,17 +45,20 @@ def alphabetizer(input: list[str]) -> dict[str, list[str]]:
     """Catagorizes words by letter."""
     alphabatized: dict[str, list[str]] = {}
     for x in input: 
-        if x[0] not in alphabatized:
-            alphabatized[x[0]] = [x]
+        if x[0].lower() not in alphabatized:
+            alphabatized[x[0].lower()] = [x]
         else: 
-            alphabatized[x[0]] += [x]
+            alphabatized[x[0].lower()] += [x]
     return alphabatized
 
 
 def update_attendance(input: dict[str, list[str]], day: str, name: str) -> dict[str, list[str]]: 
     """Takes a list and mutates it according to attendance."""
-    if day in input: 
+    keylist = []
+    for key in input:
+        keylist.append(input[key])
+    if day in input and name not in keylist:
         input[day] += [name]
-    else: 
+    elif day not in input: 
         input[day] = [name]
     return input
