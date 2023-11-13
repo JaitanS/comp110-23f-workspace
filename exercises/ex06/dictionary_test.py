@@ -1,12 +1,11 @@
 """Tests funstionality of dict functions."""
 __author__ = "730675117"
 
-
-from dictionary import invert
-from dictionary import favorite_color
-from dictionary import count
-from dictionary import alphabetizer
-from dictionary import update_attendance
+from exercises.ex06.dictionary import invert
+from exercises.ex06.dictionary import favorite_color
+from exercises.ex06.dictionary import count
+from exercises.ex06.dictionary import alphabetizer
+from exercises.ex06.dictionary import update_attendance
 
 
 def test_invert_letters() -> None: 

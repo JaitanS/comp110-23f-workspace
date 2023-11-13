@@ -56,7 +56,8 @@ def update_attendance(input: dict[str, list[str]], day: str, name: str) -> dict[
     """Takes a list and mutates it according to attendance."""
     keylist = []
     for key in input:
-        keylist.append(input[key])
+        for kid in input[key]:
+            keylist.append(kid)
     if day in input and name not in keylist:
         input[day] += [name]
     elif day not in input: 
